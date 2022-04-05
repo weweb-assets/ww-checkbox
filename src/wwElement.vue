@@ -1,15 +1,19 @@
 <template>
-    <div class="ww-icon" :style="style">
-        <div :class="[content.icon]" aria-hidden="true"></div>
+    <div class="ww-checkbox" :style="style">
+        <div v-show="checked" :class="[content.icon]" aria-hidden="true"></div>
     </div>
 </template>
 
 <script>
 export default {
     props: {
+        wwElementState: { type: Object, required: true },
         content: { type: Object, required: true },
     },
     computed: {
+        checked() {
+            return this.wwElementState.props.checked
+        },
         style() {
             return {
                 color: this.content.color,
@@ -21,7 +25,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
-.ww-icon {
+.ww-checkbox {
     display: flex;
     justify-content: center;
     align-items: center;

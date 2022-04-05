@@ -1,10 +1,10 @@
 export default {
     editor: {
         label: {
-            en: 'Icon',
-            fr: 'Icône',
+            en: 'Checkbox',
+            fr: 'Checkbox',
         },
-        icon: 'start-active',
+        icon: 'fontawesome/solid/check-square',
         menuOptions: {
             quick: {
                 sections: ['icon', 'ww-link', 'color', 'ww-background'],
@@ -35,7 +35,7 @@ export default {
             label: { en: 'Icon', fr: 'Icône' },
             type: 'Icon',
             bindable: true,
-            defaultValue: 'wwi wwi-icon',
+            defaultValue: 'wwi wwi-check',
         },
     },
 };
