@@ -11,9 +11,6 @@ export default {
         content: { type: Object, required: true },
     },
     computed: {
-        checked() {
-            return this.wwElementState.states.indexOf('checked') !== -1;
-        },
         style() {
             return {
                 color: this.content.color,
