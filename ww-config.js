@@ -35,6 +35,8 @@ export default {
             label: { en: 'Icon', fr: 'Icône' },
             type: 'Icon',
             bindable: true,
+            responsive: true,
+            states: true,
             defaultValue: 'wwi wwi-check',
         },
     },
