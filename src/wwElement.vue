@@ -1,5 +1,5 @@
 <template>
-    <div class="ww-checkbox" :style="style" :class="{ checked: checked }">
+    <div class="ww-checkbox" :style="style">
         <div :class="[content.icon]" aria-hidden="true"></div>
     </div>
 </template>
@@ -11,9 +11,6 @@ export default {
         content: { type: Object, required: true },
     },
     computed: {
-        checked() {
-            return this.wwElementState.states.indexOf('checked') !== -1;
-        },
         style() {
             return {
                 color: this.content.color,
@@ -29,10 +26,5 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
-    opacity: 0;
-
-    &.checked {
-        opacity: 1;
-    }
 }
 </style>
