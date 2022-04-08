@@ -1,6 +1,6 @@
 <template>
-    <div class="ww-checkbox" :style="style">
-        <div :class="[content.icon, { checked: checked }]" aria-hidden="true"></div>
+    <div class="ww-checkbox" :style="style" :class="{ checked: checked }">
+        <div :class="[content.icon]" aria-hidden="true"></div>
     </div>
 </template>
 
@@ -29,13 +29,10 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
 
-    & div {
-        opacity: 0;
-
-        &.checked {
-            opacity: 1;
-        }
+    &.checked {
+        opacity: 1;
     }
 }
 </style>
