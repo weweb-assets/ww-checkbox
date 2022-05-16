@@ -5,11 +5,6 @@ export default {
             fr: 'Checkbox',
         },
         icon: 'fontawesome/solid/check-square',
-        menuOptions: {
-            quick: {
-                sections: ['icon', 'ww-link', 'color', 'ww-background'],
-            },
-        },
     },
     options: {
         hyperlink: true,
