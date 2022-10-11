@@ -17,6 +17,12 @@ export default {
             responsive: true,
             states: true,
             defaultValue: 20,
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'number',
+                tooltip: 'A number that defines the icon size: `12`',
+            },
+            /* wwEditor:end */
         },
         color: {
             label: { en: 'Color', fr: 'Couleur' },
@@ -25,6 +31,13 @@ export default {
             responsive: true,
             states: true,
             defaultValue: '#000000',
+            /* wwEditor:start */
+            bindingValidation: {
+                cssSupports: 'color',
+                type: 'string',
+                tooltip: 'A string that represents a color code: `"rebeccapurple" | "#00ff00" | "rgb(214, 122, 127)"`',
+            },
+            /* wwEditor:end */
         },
         icon: {
             label: { en: 'Icon', fr: 'Icône' },
@@ -33,6 +46,12 @@ export default {
             responsive: true,
             states: true,
             defaultValue: 'wwi wwi-check',
+            /* wwEditor:start */
+            bindingValidation: {
+                type: 'string',
+                tooltip: 'A string that defines the icon code: `"fas fa-check" | "wwi wwi-cross" | "icon-music-note"`',
+            },
+            /* wwEditor:end */
         },
     },
 };
