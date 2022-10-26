@@ -4,7 +4,7 @@ export default {
             en: 'Checkbox',
             fr: 'Checkbox',
         },
-        icon: 'fontawesome/solid/check-square',
+        icon: 'check',
     },
     options: {
         hyperlink: true,
