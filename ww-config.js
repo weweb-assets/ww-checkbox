@@ -45,7 +45,7 @@ export default {
             bindable: true,
             responsive: true,
             states: true,
-            classes: true,,
+            classes: true,
             defaultValue: 'wwi wwi-check',
             /* wwEditor:start */
             bindingValidation: {
