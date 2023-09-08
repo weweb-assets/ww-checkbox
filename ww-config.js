@@ -6,9 +6,6 @@ export default {
         },
         icon: 'check',
     },
-    options: {
-        hyperlink: true,
-    },
     properties: {
         fontSize: {
             label: { en: 'Size', fr: 'Taille' },
