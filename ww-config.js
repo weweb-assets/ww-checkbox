@@ -6,6 +6,9 @@ export default {
         },
         icon: 'check',
     },
+    options: {
+      displayAllowedValues: ['flex', 'inline-flex'],  
+    },
     properties: {
         fontSize: {
             label: { en: 'Size', fr: 'Taille' },
