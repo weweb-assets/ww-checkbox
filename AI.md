@@ -1,6 +1,6 @@
 ---
 name: ww-checkbox
-description: A customizable checkbox icon component that displays a visual check mark for form inputs and selections
+description: A visual checkbox icon component that displays a check mark. This component must be used within a ww-input-checkbox for proper functionality
 keywords: checkbox, check, icon, form, input, selection
 ---
 
@@ -16,6 +16,7 @@ Behavior:
 - Uses the new icon system with `SystemIcon` type
 - Automatically inherits color from parent element using `currentColor`
 - Shows a placeholder check icon in editor mode when no icon is set
+- Must be used within a ww-input-checkbox component for proper checkbox functionality
 
 Example:
 <elements>
