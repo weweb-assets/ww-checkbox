@@ -46,7 +46,7 @@ export default {
             responsive: true,
             states: true,
             classes: true,
-            defaultValue: 'check',
+            defaultValue: 'lucide/check',
             /* wwEditor:start */
             bindingValidation: {
                 type: 'string',

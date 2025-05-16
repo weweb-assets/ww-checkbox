@@ -7,7 +7,7 @@ keywords: checkbox, check, icon, form, input, selection
 #### Checkbox
 
 Properties:
-- `icon`: `string` - The icon to display. Default: `'check'`
+- `icon`: `string` - The icon to display. Default: `'lucide/check'`
 - `color`: `string` - The color of the icon. Default: `inherit`
 - `fontSize`: `number` - The size of the icon in pixels. Default: `16`
 
@@ -20,5 +20,5 @@ Behavior:
 
 Example:
 <elements>
-{"uid":0,"tag":"ww-checkbox","props":{"default":{"icon":"check","color":"#000000","fontSize":16}},"styles":{"default":{"display":"flex","alignItems":"center","justifyContent":"center"}}}
+{"uid":0,"tag":"ww-checkbox","props":{"default":{"icon":"lucide/check","color":"#000000","fontSize":16}},"styles":{"default":{"display":"flex","alignItems":"center","justifyContent":"center"}}}
 </elements>
