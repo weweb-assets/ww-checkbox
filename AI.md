@@ -28,5 +28,5 @@ None
 
 ***Example:***
 <elements>
-{"uid":0,"tag":"ww-checkbox","props":{"default":{"icon":"lucide/check","color":"#000000","fontSize":16}},"styles":{"default":{"display":"flex","alignItems":"center","justifyContent":"center"}}}
+{"uid":0,"tag":"97a63460-5c25-4d74-ac1f-86693c2e4a08","name":"Checkbox Icon","states":[{"id":"_wwHover","label":"hover"},{"id":"zna45c","label":"checked"}],"props":{"default":{"icon":"lucide/check","color":"#0075df00","fontSize":14},"zna45c_default":{"color":"#0A89FF"}},"styles":{"default":{"width":"24px","border":"1px solid #c2c7ce","cursor":"pointer","height":"24px","display":"flex","borderRadius":"4px","alignItems":"center","justifyContent":"center"},"_wwHover_default":{"backgroundColor":"rgba(0, 117, 223, 0.1)"}}}
 </elements>
