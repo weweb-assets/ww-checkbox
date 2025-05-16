@@ -41,16 +41,16 @@ export default {
         },
         icon: {
             label: { en: 'Icon', fr: 'Icône' },
-            type: 'Icon',
+            type: 'SystemIcon',
             bindable: true,
             responsive: true,
             states: true,
             classes: true,
-            defaultValue: 'wwi wwi-check',
+            defaultValue: 'check',
             /* wwEditor:start */
             bindingValidation: {
                 type: 'string',
-                tooltip: 'A string that defines the icon code: `"fas fa-check" | "wwi wwi-cross" | "icon-music-note"`',
+                tooltip: 'A string that defines the icon code',
             },
             /* wwEditor:end */
         },
