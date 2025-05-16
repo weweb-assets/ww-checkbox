@@ -25,6 +25,8 @@ None
 - Renders SVG icons dynamically using the new SystemIcon type
 - Automatically inherits color from parent element using currentColor
 - Shows a placeholder check icon in editor mode when no icon is set
+- Requires 'checked' state configuration for proper visual feedback
+- Common pattern: transparent color when unchecked, visible color when checked
 
 ***Example:***
 <elements>
