@@ -31,6 +31,15 @@ export default {
     mounted() {
         console.log('ww-checkbox mounted:', { content: this.content, states: this.states });
     },
+    watch: {
+        states: {
+            handler(newStates, oldStates) {
+                console.log('ww-checkbox states watcher:', { newStates, oldStates });
+            },
+            immediate: true,
+            deep: true
+        }
+    },
     computed: {
         isChecked() {
             const checked = this.states.includes('checked');
