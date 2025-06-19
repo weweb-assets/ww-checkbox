@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import { ref, watch, computed } from 'vue';
+import { ref, watch, computed, inject } from 'vue';
 
 export default {
     props: {
@@ -24,14 +24,19 @@ export default {
             }
         }, { immediate: true });
 
+        // Inject reactive states from parent
+        const injectedStates = inject('checkboxStates', ref([]));
+        
         return {
             iconText,
+            injectedStates,
         };
     },
     computed: {
         isChecked() {
-            console.log('ww-checkbox isChecked:', { states: this.states });
-            return this.states.includes('checked');
+            const checked = this.injectedStates.includes('checked');
+            console.log('ww-checkbox isChecked:', { injectedStates: this.injectedStates, checked });
+            return checked;
         },
         iconHTML() {
             console.log('ww-checkbox iconHTML:', { isChecked: this.isChecked, states: this.states });
