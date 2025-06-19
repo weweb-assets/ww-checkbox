@@ -7,23 +7,9 @@ export default {
         icon: 'check',
     },
     options: {
-      displayAllowedValues: ['flex', 'inline-flex'],  
+        displayAllowedValues: ['flex', 'inline-flex'],
     },
     properties: {
-        fontSize: {
-            label: { en: 'Size', fr: 'Taille' },
-            type: 'Number',
-            bindable: true,
-            responsive: true,
-            states: true,
-            classes: true,
-            /* wwEditor:start */
-            bindingValidation: {
-                type: 'number',
-                tooltip: 'A number that defines the icon size: `12`',
-            },
-            /* wwEditor:end */
-        },
         color: {
             label: { en: 'Color', fr: 'Couleur' },
             type: 'Color',
