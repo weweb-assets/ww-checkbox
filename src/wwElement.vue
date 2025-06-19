@@ -28,6 +28,9 @@ export default {
             iconText,
         };
     },
+    mounted() {
+        console.log('ww-checkbox mounted:', { content: this.content, states: this.states });
+    },
     computed: {
         isChecked() {
             const checked = this.states.includes('checked');
@@ -35,17 +38,24 @@ export default {
             return checked;
         },
         iconHTML() {
+            console.log('ww-checkbox iconHTML computed:', { isChecked: this.isChecked, iconText: this.iconText });
+            
             // Only show icon when checked
             if (!this.isChecked) {
+                console.log('ww-checkbox: not checked, returning empty string');
                 return '';
             }
+            
+            console.log('ww-checkbox: is checked, showing icon');
             
             // Use a placeholder icon in editor mode when no icon is set
             /* wwEditor:start */
             if (!this.iconText) {
+                console.log('ww-checkbox: using fallback icon');
                 return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>';
             }
             /* wwEditor:end */
+            console.log('ww-checkbox: using loaded icon');
             return this.iconText;
         },
         style() {
