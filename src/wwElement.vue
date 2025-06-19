@@ -24,14 +24,28 @@ export default {
             }
         }, { immediate: true });
 
+        const internalStates = ref([]);
+
         return {
             iconText,
+            internalStates,
         };
+    },
+    mounted() {
+        console.log('ww-checkbox mounted:', { content: this.content, states: this.states });
+        this.internalStates = [...this.states];
+        
+        // Listen for state updates from parent
+        this.$el.addEventListener('updateCheckboxStates', (event) => {
+            console.log('ww-checkbox received updateCheckboxStates event:', event.detail);
+            this.internalStates = [...event.detail.states];
+        });
     },
     watch: {
         states: {
             handler(newStates, oldStates) {
                 console.log('ww-checkbox states watcher:', { newStates, oldStates });
+                this.internalStates = [...newStates];
             },
             immediate: true,
             deep: true
@@ -39,8 +53,8 @@ export default {
     },
     computed: {
         isChecked() {
-            const checked = this.states.includes('checked');
-            console.log('ww-checkbox isChecked:', { states: this.states, checked });
+            const checked = this.internalStates.includes('checked');
+            console.log('ww-checkbox isChecked:', { internalStates: this.internalStates, checked });
             return checked;
         },
         iconHTML() {
