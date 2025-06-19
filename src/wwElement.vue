@@ -37,11 +37,6 @@ export default {
             return this.injectedStates.includes('checked');
         },
         iconHTML() {
-            // Only show icon when checked
-            if (!this.isChecked) {
-                return '';
-            }
-            
             // Use a placeholder icon in editor mode when no icon is set
             /* wwEditor:start */
             if (!this.iconText) {
@@ -54,6 +49,7 @@ export default {
             return {
                 color: this.content.color,
                 fontSize: `${this.content.fontSize}px`,
+                opacity: this.isChecked ? 1 : 0,
             };
         },
     },
