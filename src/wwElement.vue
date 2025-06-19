@@ -10,6 +10,7 @@ export default {
         content: { type: Object, required: true },
         states: { type: Array, default: () => [] },
     },
+    expose: ['updateStates'],
     setup(props) {
         const { getIcon } = wwLib.useIcons();
         const iconText = ref(null);
@@ -24,12 +25,22 @@ export default {
             }
         }, { immediate: true });
 
+        const internalStates = ref([]);
+
         return {
             iconText,
+            internalStates,
         };
     },
     mounted() {
         console.log('ww-checkbox mounted:', { content: this.content, states: this.states });
+        this.internalStates = [...this.states];
+    },
+    methods: {
+        updateStates(newStates) {
+            console.log('ww-checkbox updateStates called:', { newStates });
+            this.internalStates = [...newStates];
+        }
     },
     watch: {
         states: {
@@ -42,8 +53,8 @@ export default {
     },
     computed: {
         isChecked() {
-            const checked = this.states.includes('checked');
-            console.log('ww-checkbox isChecked:', { states: this.states, checked });
+            const checked = this.internalStates.includes('checked');
+            console.log('ww-checkbox isChecked:', { internalStates: this.internalStates, checked });
             return checked;
         },
         iconHTML() {
