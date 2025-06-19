@@ -8,6 +8,7 @@ import { ref, watch, computed } from 'vue';
 export default {
     props: {
         content: { type: Object, required: true },
+        states: { type: Array, default: () => [] },
     },
     setup(props) {
         const { getIcon } = wwLib.useIcons();
@@ -28,7 +29,17 @@ export default {
         };
     },
     computed: {
+        isChecked() {
+            const checked = this.states.includes('checked');
+            console.log('ww-checkbox isChecked:', { states: this.states, checked });
+            return checked;
+        },
         iconHTML() {
+            // Only show icon when checked
+            if (!this.isChecked) {
+                return '';
+            }
+            
             // Use a placeholder icon in editor mode when no icon is set
             /* wwEditor:start */
             if (!this.iconText) {
