@@ -1,5 +1,7 @@
 <template>
-    <div class="ww-checkbox" :style="style" v-html="iconHTML"></div>
+    <div class="ww-checkbox" :style="style">
+        <div :style="{ opacity: isChecked ? 1 : 0 }" v-html="iconHTML"></div>
+    </div>
 </template>
 
 <script>
@@ -49,7 +51,6 @@ export default {
             return {
                 color: this.content.color,
                 fontSize: `${this.content.fontSize}px`,
-                opacity: this.isChecked ? 1 : 0,
             };
         },
     },
