@@ -34,20 +34,13 @@ export default {
     },
     computed: {
         isChecked() {
-            const checked = this.injectedStates.includes('checked');
-            console.log('ww-checkbox isChecked:', { injectedStates: this.injectedStates, checked });
-            return checked;
+            return this.injectedStates.includes('checked');
         },
         iconHTML() {
-            console.log('ww-checkbox iconHTML:', { isChecked: this.isChecked, states: this.states });
-            
             // Only show icon when checked
             if (!this.isChecked) {
-                console.log('ww-checkbox: not checked, hiding icon');
                 return '';
             }
-            
-            console.log('ww-checkbox: checked, showing icon');
             
             // Use a placeholder icon in editor mode when no icon is set
             /* wwEditor:start */
