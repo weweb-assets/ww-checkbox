@@ -35,6 +35,12 @@ export default {
     mounted() {
         console.log('ww-checkbox mounted:', { content: this.content, states: this.states });
         this.internalStates = [...this.states];
+        
+        // Listen for direct state updates
+        this.$el.addEventListener('updateCheckboxStates', (event) => {
+            console.log('ww-checkbox received updateCheckboxStates event:', event.detail);
+            this.internalStates = [...event.detail.states];
+        });
     },
     methods: {
         updateStates(newStates) {
