@@ -1,7 +1,5 @@
 <template>
-    <div class="ww-checkbox" :style="style">
-        <div :style="{ opacity: isChecked ? 1 : 0 }" v-html="iconHTML"></div>
-    </div>
+    <div class="ww-checkbox" :style="style" v-html="iconHTML"></div>
 </template>
 
 <script>
@@ -39,18 +37,29 @@ export default {
             return this.injectedStates.includes('checked');
         },
         iconHTML() {
+            const opacity = this.isChecked ? 1 : 0;
+            const size = this.content.fontSize || 24;
+            
             // Use a placeholder icon in editor mode when no icon is set
             /* wwEditor:start */
             if (!this.iconText) {
-                return '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 256 256"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>';
+                return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" fill="currentColor" viewBox="0 0 256 256" style="opacity: ${opacity}"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>`;
             }
             /* wwEditor:end */
+            
+            // Add opacity and size to the SVG if it exists
+            if (this.iconText && this.iconText.includes('<svg')) {
+                return this.iconText
+                    .replace(/width="[^"]*"/g, `width="${size}"`)
+                    .replace(/height="[^"]*"/g, `height="${size}"`)
+                    .replace('<svg', `<svg style="opacity: ${opacity}"`);
+            }
+            
             return this.iconText;
         },
         style() {
             return {
                 color: this.content.color,
-                fontSize: `${this.content.fontSize}px`,
             };
         },
     },
