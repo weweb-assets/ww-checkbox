@@ -1,5 +1,5 @@
 <template>
-    <div class="ww-checkbox" :style="style" v-html="iconHTML" :data-width="width" :data-height="height" />
+    <div class="ww-checkbox" :style="style" v-html="iconHTML" />
 </template>
 
 <script>
@@ -71,5 +71,11 @@ export default {
     display: flex;
     justify-content: center;
     align-items: center;
+    box-sizing: border-box;
+
+    :deep(svg) {
+        width: 100%;
+        height: 100%;
+    }
 }
 </style>
