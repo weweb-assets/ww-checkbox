@@ -29,7 +29,7 @@ None
 
 ***Example:***
 <elements>
-{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"states":[{"id":"_wwParent_parent1_checked","label":"Parent:checked"}],"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"_wwParent_parent1_checked_default":{"color":"#0A89FF"}}}
+{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"states":[{"id":"_wwParent_{parentCheckboxName}_checked","label":"Parent:checked"}],"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"_wwParent_{parentCheckboxName}_checked_default":{"color":"#0A89FF"}}}
 </elements>
 
-**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the parent's checked state to change the icon color when checked.
+**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the parent's checked state to change the icon color when checked. Replace `{parentCheckboxName}` with the actual name of the parent ww-input-checkbox element.
