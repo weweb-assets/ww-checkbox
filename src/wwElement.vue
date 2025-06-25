@@ -10,7 +10,8 @@ export default {
         content: { type: Object, required: true },
         states: { type: Array, default: () => [] },
     },
-    setup(props) {
+    emits: ['add-state', 'remove-state'],
+    setup(props, { emit }) {
         const { getIcon } = wwLib.useIcons();
         const iconText = ref(null);
 
@@ -30,6 +31,19 @@ export default {
 
         // Inject reactive states from parent
         const injectedStates = inject('checkboxStates', ref([]));
+
+        // Watch for checked state changes
+        watch(
+            () => injectedStates.value.includes('checked'),
+            (isChecked) => {
+                if (isChecked) {
+                    emit('add-state', 'checked');
+                } else {
+                    emit('remove-state', 'checked');
+                }
+            },
+            { immediate: true }
+        );
 
         return {
             iconText,
