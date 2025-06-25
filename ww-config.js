@@ -6,7 +6,6 @@ export default {
         },
         icon: 'check',
     },
-    states: ['checked'],
     options: {
         displayAllowedValues: ['flex', 'inline-flex'],
     },
