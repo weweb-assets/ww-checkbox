@@ -50,11 +50,6 @@ export default {
             }
             /* wwEditor:end */
 
-            // Add opacity to the SVG if it exists
-            if (this.iconText && this.iconText.includes('<svg')) {
-                return this.iconText.replace('<svg', `<svg style="opacity: ${opacity}"`);
-            }
-
             return this.iconText;
         },
         style() {
@@ -72,6 +67,7 @@ export default {
     justify-content: center;
     align-items: center;
     box-sizing: border-box;
+    cursor: pointer;
 
     :deep(svg) {
         width: 100%;

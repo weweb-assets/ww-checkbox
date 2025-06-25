@@ -17,6 +17,7 @@ export default {
             responsive: true,
             states: true,
             classes: true,
+            defaultValue: '#00000000',
             /* wwEditor:start */
             bindingValidation: {
                 cssSupports: 'color',
