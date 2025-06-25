@@ -31,6 +31,13 @@ None
 - The component emits its own checked and readonly states based on parent state
 - Use the component's own states for styling instead of parent states
 
+**IMPORTANT STYLING INSTRUCTIONS:**
+- ALWAYS include the "checked" state in the states array: `"states":[{"id":"checked","label":"checked"}]`
+- ALWAYS use state-based props for visual changes, especially color: `"props":{"default":{"color":"#00000000"},"checked_default":{"color":"#0A89FF"}}`
+- The default color should typically be transparent (#00000000) or a light gray
+- The checked state should have a visible color (e.g., blue #0A89FF)
+- DO NOT rely solely on opacity for visual feedback - always include state-based color changes
+
 ***Example:***
 <elements>
 {"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"},"checked_default":{"color":"#0A89FF"}},"states":[{"id":"checked","label":"checked"}],"styles":{"default":{"width":"24px","height":"24px"}}}
