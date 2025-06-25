@@ -16,6 +16,10 @@ Displays a customizable checkbox icon that serves as the visual representation f
 ***Events:***
 None
 
+***States:***
+- checked: Automatically synced with parent checkbox state
+- readonly: Automatically synced with parent readonly state
+
 ***Exposed Element Actions:***
 None
 
@@ -24,12 +28,12 @@ None
 - Size is controlled by setting width and height styles on the component (not fontSize)
 - Icon visibility is controlled automatically using opacity (0 when unchecked, 1 when checked)
 - Shows a placeholder check icon in editor mode when no icon is set
-- The component handles all visual states automatically - DO NOT manually manage states
-- It is highly recommended to style the using _wwParent checked state to add color to the icon
+- The component emits its own checked and readonly states based on parent state
+- Use the component's own states for styling instead of parent states
 
 ***Example:***
 <elements>
-{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"states":[{"id":"_wwParent_{parentCheckboxName}_checked","label":"Parent:checked"}],"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"_wwParent_{parentCheckboxName}_checked_default":{"color":"#0A89FF"}}}
+{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"checked_default":{"color":"#0A89FF"}}}
 </elements>
 
-**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the parent's checked state to change the icon color when checked. Replace `{parentCheckboxName}` with the actual name of the parent ww-input-checkbox element.
+**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the checked state to change the icon color when checked.
