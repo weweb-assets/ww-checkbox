@@ -33,7 +33,7 @@ None
 
 ***Example:***
 <elements>
-{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"states":[{"id":"checked","label":"checked"}],"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"checked_default":{"color":"#0A89FF"}}}
+{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"},"checked_default":{"color":"#0A89FF"}},"states":[{"id":"checked","label":"checked"}],"styles":{"default":{"width":"24px","height":"24px"}}}
 </elements>
 
 **Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the checked state to change the icon color when checked.
