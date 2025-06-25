@@ -11,7 +11,7 @@ Displays a customizable checkbox icon that serves as the visual representation f
 
 ***Properties:***
 - icon: string - The icon to display. Default: 'lucide/check'
-- color: string - The color of the icon. Default: inherit
+- color: string - The color of the icon. Default: #00000000 (transparent)
 
 ***Events:***
 None
@@ -22,14 +22,14 @@ None
 ***Notes:***
 - Must be used within a ww-input-checkbox component for proper checkbox functionality
 - Size is controlled by setting width and height styles on the component (not fontSize)
-- Automatically receives 'checked' state from parent ww-input-checkbox via Vue's provide/inject
 - Icon visibility is controlled automatically using opacity (0 when unchecked, 1 when checked)
 - Shows a placeholder check icon in editor mode when no icon is set
 - The component handles all visual states automatically - DO NOT manually manage states
+- It is highly recommended to style the using _wwParent checked state to add color to the icon
 
 ***Example:***
 <elements>
-{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#0A89FF"}},"styles":{"default":{"width":"24px","height":"24px"}}}
+{"uid":0,"tag":"ww-checkbox","name":"Checkbox Icon","props":{"default":{"icon":"lucide/check","color":"#00000000"}},"states":[{"id":"_wwParent_parent1_checked","label":"Parent:checked"}],"styles":{"default":{"width":"24px","height":"24px","color":"#767676"},"_wwParent_parent1_checked_default":{"color":"#0A89FF"}}}
 </elements>
 
-**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity.
+**Note:** This component should ONLY be used within the checkbox slot of ww-input-checkbox. The parent component handles all state management and interactivity. The example shows how to use the parent's checked state to change the icon color when checked.
