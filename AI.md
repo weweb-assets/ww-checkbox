@@ -11,7 +11,7 @@ Displays a customizable checkbox icon that serves as the visual representation f
 
 ***Properties:***
 - icon: string - The icon to display. Default: 'lucide/check'
-- color: string - The color of the icon. Default: #00000000 (transparent)
+- color: string - The color of the ICON ONLY (not background). Default: #00000000 (transparent)
 
 ***Events:***
 None
@@ -33,10 +33,12 @@ None
 
 **IMPORTANT STYLING INSTRUCTIONS:**
 - ALWAYS include the "checked" state in the states array: `"states":[{"id":"checked","label":"checked"}]`
-- ALWAYS use state-based props for visual changes, especially color: `"props":{"default":{"color":"#00000000"},"checked_default":{"color":"#0A89FF"}}`
-- The default color should typically be transparent (#00000000) or a light gray
-- The checked state should have a visible color (e.g., blue #0A89FF)
-- DO NOT rely solely on opacity for visual feedback - always include state-based color changes
+- ALWAYS use state-based props for ICON color: `"props":{"default":{"color":"#00000000"},"checked_default":{"color":"#FFFFFF"}}`
+- The color property ONLY affects the icon/checkmark color, NOT the background
+- Default icon color should be transparent (#00000000) to hide the checkmark when unchecked
+- Checked state icon color should contrast with background (e.g., white #FFFFFF on colored background)
+- Background styling (backgroundColor, border) should be in styles, NOT affected by the color prop
+- DO NOT set icon color the same as background color - the icon needs to be visible when checked
 
 ***Example:***
 <elements>
